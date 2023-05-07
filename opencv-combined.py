@@ -50,7 +50,7 @@ def detect_emotions():
 
             # Make a prediction on the ROI, then look up the class name
             preds = model.predict(np.expand_dims(roi, axis=0))[0]
-            label = ["Angry", "Disgust", "Fear", "Happy", "Neutral", "Sad", "Surprise"][np.argmax(preds)]
+            label = ["Intense gaze", "Wandering gaze", "Averted gaze", "Fixed gaze", "Wandering gaze", "Avoidant gaze", "Intense gaze"][np.argmax(preds)]
 
             # Detect eyes in the face ROI
             eyes = eye_cascade.detectMultiScale(roi_gray)
